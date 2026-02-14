@@ -126,52 +126,59 @@ export default function ValentineSurprise() {
                 <div className="relative z-10 max-w-6xl mx-auto px-4 py-12">
                     {/* Title */}
                     <h1 className="text-5xl md:text-7xl font-bold text-center mb-12 bg-gradient-to-r from-pink-600 via-red-500 to-purple-600 bg-clip-text text-transparent animate-fade-in">
-                        Happy Valentine's Day! 💕
+                        Happy Valentine's Day Ananya 💕
                     </h1>
 
                     {/* Image Gallery */}
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-slide-in-left">
-                            <Image
-                                src="/image.png"
-                                alt="Valentine Photo"
-                                fill
-                                className="object-cover"
-                                onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    target.style.display = 'none';
-                                    if (target.parentElement) {
-                                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-white text-6xl">💑</div>';
-                                    }
-                                }}
-                            />
-                        </div>
-
-                        <div className="relative h-80 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300 animate-slide-in-right">
-                            <Image
-                                src="/image.png"
-                                alt="Valentine Photo 2"
-                                fill
-                                className="object-cover"
-                                onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    target.style.display = 'none';
-                                    if (target.parentElement) {
-                                        target.parentElement.innerHTML = '<div class="w-full h-full bg-gradient-to-br from-red-400 to-pink-500 flex items-center justify-center text-white text-6xl">💖</div>';
-                                    }
-                                }}
-                            />
-                        </div>
+                    <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 mb-12">
+                        {[
+                            "/S__26353669.jpg",
+                            "/S__26353671_0.jpg",
+                            "/S__26353672_0.jpg",
+                            "/S__26353673_0.jpg",
+                            "/S__26353674_0.jpg",
+                            "/S__26353675_0.jpg",
+                            "/S__26353676_0.jpg",
+                            "/S__26353677_0.jpg",
+                            "/S__26353678_0.jpg",
+                            "/S__26353679_0.jpg",
+                            "/S__26353680_0.jpg",
+                            "/S__26353682_0.jpg",
+                            "/S__26353683_0.jpg",
+                            "/S__26353684.jpg",
+                        ].map((src, index) => (
+                            <div
+                                key={index}
+                                className="relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-[1.02] transition-all duration-300 hover:shadow-2xl break-inside-avoid animate-fade-in-up"
+                                style={{ animationDelay: `${index * 150}ms` }}
+                            >
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 z-10" />
+                                <Image
+                                    src={src}
+                                    alt={`Valentine Photo ${index + 1}`}
+                                    width={0}
+                                    height={0}
+                                    sizes="100vw"
+                                    className="w-full h-auto object-cover"
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.style.display = 'none';
+                                    }}
+                                />
+                            </div>
+                        ))}
                     </div>
 
                     {/* Video Section */}
                     <div className="mb-12 animate-fade-in-up">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 h-96 flex items-center justify-center">
-                            <div className="text-center">
-                                <div className="text-8xl mb-4">🎬</div>
-                                <p className="text-white text-2xl font-semibold">Your Special Video Here</p>
-                                <p className="text-white/80 text-sm mt-2">Add your video to /public/valentine-video.mp4</p>
-                            </div>
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl w-full aspect-video">
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/_t0OKDaZLUw"
+                                title="Valentine Song"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
                         </div>
                     </div>
 
@@ -179,13 +186,13 @@ export default function ValentineSurprise() {
                     <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 animate-fade-in-up">
                         <div className="prose prose-lg max-w-none">
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Happy Valentine's Day! สุขสันต์วันแห่งความรักนะครับอ้วงง
                             </p>
                             <p className="text-gray-700 leading-relaxed mb-4">
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                ขอบคุณที่มอบความสุข รอยยิ้ม และทุกๆอย่าง ขอบคุณที่อยู่ข้างๆกันในวันที่มีความสุข และวันที่ไม่มีความสุข
                             </p>
                             <p className="text-gray-700 leading-relaxed">
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                                ถึงแม้จะยู่ห่างไกลกัน แต่ก็คอยประคองความรักของเราไปด้วยกันนะ อาจจะมีทะเลาะกันบ้าง ไม่เข้าใจกันบ้าง แต่ก็ไม่ปล่อยมือกันนะ ❤️
                             </p>
                         </div>
                     </div>
@@ -225,48 +232,88 @@ export default function ValentineSurprise() {
                 </h2>
 
                 {/* Heart button */}
-                <div className="relative inline-block">
-                    <button
-                        onMouseDown={handleMouseDown}
-                        onMouseUp={handleMouseUp}
-                        onMouseLeave={handleMouseLeave}
-                        onTouchStart={handleMouseDown}
-                        onTouchEnd={handleMouseUp}
-                        className={`text-9xl md:text-[12rem] transition-all duration-200 cursor-pointer select-none ${isPressed ? "scale-90" : "scale-100 hover:scale-110"
+                {/* Enhanced Heart Button */}
+                <div className="relative group cursor-pointer inline-flex items-center justify-center">
+                    {/* Glowing background effect */}
+                    <div
+                        className={`absolute inset-0 bg-pink-500 rounded-full blur-3xl transition-opacity duration-500 ${isPressed ? 'opacity-50 scale-110' : 'opacity-20 scale-100 group-hover:opacity-40'
                             }`}
-                        style={{
-                            filter: `brightness(${1 + progress / 100}) saturate(${1 + progress / 50})`,
-                        }}
-                    >
-                        ❤️
-                    </button>
+                    />
 
-                    {/* Progress ring */}
-                    {progress > 0 && (
-                        <svg
-                            className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none"
-                            viewBox="0 0 200 200"
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                        <button
+                            onMouseDown={handleMouseDown}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleMouseDown}
+                            onTouchEnd={handleMouseUp}
+                            className={`relative z-10 text-9xl md:text-[8rem] transition-all duration-100 select-none 
+                                ${isPressed ? 'scale-90' : 'scale-100 group-hover:scale-110 animate-pulse'}
+                            `}
+                            style={{
+                                filter: `drop-shadow(0 0 ${progress * 0.5}px rgba(236, 72, 153, ${progress / 100})) brightness(${1 + progress / 50})`,
+                            }}
                         >
+                            <span className={`block ${progress > 80 && isPressed ? 'animate-wiggle' : ''}`}>
+                                ❤️
+                            </span>
+                        </button>
+
+                        {/* Progress Ring with Gradient */}
+                        <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none drop-shadow-lg" viewBox="0 0 100 100">
+                            {/* Gradient Definition */}
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stopColor="#ec4899" />
+                                    <stop offset="50%" stopColor="#ef4444" />
+                                    <stop offset="100%" stopColor="#a855f7" />
+                                </linearGradient>
+                            </defs>
+
+                            {/* Track */}
                             <circle
-                                cx="100"
-                                cy="100"
-                                r="90"
+                                cx="50"
+                                cy="50"
+                                r="45"
                                 fill="none"
-                                stroke="#ec4899"
-                                strokeWidth="8"
-                                strokeDasharray={`${progress * 5.65} 565`}
-                                className="transition-all duration-100"
+                                stroke="#fce7f3"
+                                strokeWidth="4"
+                                className="opacity-30"
                             />
+
+                            {/* Progress */}
+                            {progress > 0 && (
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="45"
+                                    fill="none"
+                                    stroke="url(#progressGradient)"
+                                    strokeWidth="6"
+                                    strokeLinecap="round"
+                                    strokeDasharray={`${progress * 2.83} 283`}
+                                    className="transition-all duration-75 ease-linear"
+                                />
+                            )}
                         </svg>
-                    )}
+                    </div>
                 </div>
 
-                {/* Progress text */}
-                {progress > 0 && progress < 100 && (
-                    <p className="mt-6 text-2xl font-semibold text-pink-600 animate-bounce">
-                        {Math.round(progress)}%
-                    </p>
-                )}
+                {/* Dynamic Text Feedback */}
+                <div className="h-12 mt-8">
+                    {progress > 0 && progress < 100 ? (
+                        <p className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent animate-pulse">
+                            {progress < 30 ? "Keep holding..." :
+                                progress < 60 ? "Sending love..." :
+                                    progress < 90 ? "Almost there!" : "❤️ LOVING YOU ❤️"}
+                            <span className="block text-sm text-pink-400 mt-1">{Math.round(progress)}%</span>
+                        </p>
+                    ) : (
+                        <p className="text-xl text-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            (Press and hold to unlock surprise)
+                        </p>
+                    )}
+                </div>
             </div>
 
             {/* Sparkles effect */}
